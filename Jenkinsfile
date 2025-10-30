@@ -17,7 +17,8 @@ pipeline{
     
         stage("Checkout from SCM"){
             steps {
-		checkout scm
+		git branch: "${env.BRANCH_NAME}", credentialsId: 'github', url: 'https://github.com/meisama/complete-prodcution-e2e-pipeline'
+
             }
 
         }
