@@ -20,8 +20,20 @@ pipeline{
 		git branch: "feature/my-change", credentialsId: 'github', url: 'https://github.com/meisama/complete-prodcution-e2e-pipeline'
 
             }
-
         }
+
+        stage("Build Application"){
+            steps {
+                sh "mvn clean package"
+            }
+        }
+
+        stage("Test Application"){
+            steps {
+                sh "mvn test"
+            }
+        }
+
     }
 
 }
