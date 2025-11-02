@@ -1,4 +1,4 @@
-FROM maven.4.0.0-rc-4-eclipse-temurin-17-alpine as build
+FROM maven:4.0.0-rc-4-eclipse-temurin-17-alpine as build
 WORKDIR /app
 COPY . .
 RUN mv clean install
