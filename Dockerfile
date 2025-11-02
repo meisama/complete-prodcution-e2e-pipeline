@@ -1,7 +1,7 @@
 FROM maven:4.0.0-rc-4-eclipse-temurin-17-alpine as build
 WORKDIR /app
 COPY . .
-RUN mv clean install
+RUN mvn clean install
 
 FROM eclipse-temurin:17.0.6_10-jdk
 WORKDIR /app
